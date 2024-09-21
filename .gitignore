@@ -1,0 +1,4 @@
+*.exe
+*.bin
+*.elf
+snake_game/.vscode/**
