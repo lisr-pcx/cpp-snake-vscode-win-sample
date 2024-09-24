@@ -11,7 +11,7 @@
 int main()
 {    
     int RetVal = 0;
-    Snake SnakeGame;
+    Snake SnakeGame(12);
 
     while (RetVal == 0)
     {
