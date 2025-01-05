@@ -2,7 +2,6 @@
  * Project: cpp-snake-vscode-win-sample
  * lisr-pcx
  * 2024-09-21
- * Include windows API for cursor movement and user input
  */
 
 #include "snake.h"
@@ -21,9 +20,7 @@ _BoardMaxHeight(kDefaultBoardSize)
 	}
 
 	_MaxSnake = (_BoardMaxWidth * _BoardMaxHeight) - 1;
-	TypePoint SnakeBody;
-	SnakeBody.x = _BoardMaxWidth/2;
-	SnakeBody.y = _BoardMaxHeight/2;
+	TypePoint SnakeBody = { .x = _BoardMaxWidth/2, .y = _BoardMaxHeight/2 };
 	_TheSnake.push_back(SnakeBody);	
 	_TheSnakeDirection = Snake::kRight;	
 	_TheMouse = this->NewMousePosition();
@@ -152,16 +149,18 @@ void Snake::Draw()
 	std::cout << "+";
 }
 
-/* Private */
+/***************
+ Private methods
+ ***************/
 
 Snake::TypePoint Snake::NewMousePosition()
 {
 	bool FindPosition = true;
 	TypePoint Position;
 
-	// Note: hide a buggin' behavior because
-	// it could takes a lot to find a valid 
-	// position when the board is almost filled (!)
+	// Note: hide a really bad bug because it
+	// could takes a lot to find a valid position
+	// when the board is almost filled (!)
 
 	while (FindPosition)
 	{

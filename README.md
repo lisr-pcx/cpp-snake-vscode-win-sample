@@ -1,22 +1,26 @@
 # cpp-snake-vscode-win-sample
 
-Step-by-step guide to configure Windows VS CODE for running C++ project on Windows OS (include a clone of snake game for educational purpose).
+Step-by-step guide to configure Windows VS CODE for running C++ project on Windows OS.
+
+As sample project it's used a simple clone of snake game, just for educational purpose.
 
 > [!NOTE]
 > This guide is based on online tutorials and articles, some information can be outdated, please change according to your needs.
 
 ## Setup environment
 
-Start by installing the *editor* used for writing the program.  
-On this guide it's used **Visual Studio Code**. Choose the release according to your OS [Download VS Code](https://code.visualstudio.com/download)
+Start by installing the *editor* used for writing the program. For this guide will be **Visual Studio Code**.  
+Choose the release according to your OS [Download VS Code](https://code.visualstudio.com/download).
 
-At installation complete then open VS Code Editor and add the "C/C++ extension by Microsoft" for a better experience and support [Download VS Code C/C++ Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+When installation is complete open VS Code Editor and add the "C/C++ extension by Microsoft" for a better experience and support [Download VS Code C/C++ Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).
 
 Next step is to install the *toolchain* (MinGW or MSYS64).
 
+If you are using your work-laptop be aware that sometimes sites below are blocked (company policy).
+
 ### MinGW
 
-It's suggested to use this toolchain. Choose the release according to your OS [Download MinGW-w64](https://www.mingw-w64.org/downloads/)
+It's suggested to use this toolchain. Choose the release according to your OS [Download MinGW-w64](https://www.mingw-w64.org/downloads/).
 
 At this point please verify the toolchain version running the commands:
 
@@ -28,9 +32,9 @@ gdb --version
 
 ### MSYS64
 
-Some company laptop could have blocked some sites as sourceforge or similar... You can also try to install MSYS2 as an alternative tool [Download MYSYS-64](http://www.msys2.org).
+A valid alternative is MSYS2 [Download MYSYS-64](http://www.msys2.org).
 
-At installation complete then open desired terminal in order to download and configure any desired tool.
+After installation open terminal in order to download and configure any desired tool:
 
 + Run MSYS2 MINGW64 for 64 bit architecture
 + Run MSYS2 MINGW32 for 32 bit architecture
@@ -43,7 +47,7 @@ pacman -S mingw-w64-x86_64-gcc
 pacman -S mingw-w64-x86_64-gdb
 ```
 
-Finally check versions:
+Finally check version:
 
 ```shell
 gcc --version
@@ -56,9 +60,9 @@ gdb --version
 
 ## SNAKE game clone
 
-Open the "snake_game" directory using VS CODE, and check the confirm *trust ..."* inside the popup.
+Open the "snake_game" directory using VS CODE (right mouse click on explorer), and check the confirm *"trust ..."* inside the popup.
 
-This sample project is composed by:  
+The sample project is composed by:  
 `main.cpp`  
 `snake.h`  
 `snake.cpp`
@@ -67,11 +71,12 @@ Feel free to play with sourcecode.
 
 ### Build project
 
-Click the PLAY icon (top right corner).
+Click the `PLAY` icon (top right corner).
 
-Choose the compiler **g++ ...** available.
+Choose the available compiler **g++ ...** from the list.
 
-The "DEBUG CONSOLE" on the bottom will show your output.
+The program is compiled and executed.  
+The DEBUG CONSOLE on the bottom will show your output.
 
 For *building multiple source files* change the building args inside ".vscode/tasks.json".  
 On g++ section change from `"${file}"` to `"*.cpp"`  
@@ -114,15 +119,18 @@ Below just and example (command path could be different on your laptop)
 > If you mess with your configuration and your want to start again from scratch, just delete the hidden directory ".vscode/".
 
 > [!TIP]
-> This example use windows API in order to move the cursor aorund the terminal screen. It's suggest to run the executable after a "clear" command to have everything ok on screen.
-
-## Appendix for newbies
-
-Do your homework, below just a peek from Wikipedia...
-
-**Toolchain**: a simple software development toolchain refers to the necessary tools to develop programs for a given operating system running a certain CPU architecture, consisting of a [compiler](https://en.wikipedia.org/wiki/Compiler) and [linker](https://en.wikipedia.org/wiki/Linker_(computing)) (which transform the source code into an executable program), libraries (which provide interfaces to the operating system), and a debugger (which is used to test and debug created programs). Cross-compilation toolchains are also available.
+> This example uses windows API in order to move the cursor aorund the terminal screen. It's suggest to run the executable after a "clear" command to have everything ok on screen.
 
 # LINKS
 
 [Using GCC with MinGW](https://code.visualstudio.com/docs/cpp/config-mingw)  
 [Learn C/C++ by example](https://www.cbyexample.com)
+
+**Appendix for newbies**
+
+Do your homework, below just a peek from Wikipedia...
+
+**Toolchain**: a simple software development toolchain refers to the necessary tools to develop programs for a given operating system running a certain CPU architecture, consisting of a [compiler](https://en.wikipedia.org/wiki/Compiler) and [linker](https://en.wikipedia.org/wiki/Linker_(computing)) (which transform the source code into an executable program), libraries (which provide interfaces to the operating system), and a debugger (which is used to test and debug created programs). Cross-compilation toolchains are also available.
+
+**C++** is an high-level, general purpose, compiled programming language. First released in 1985 as extension of C language, it has since expanded over time adding object-oriented, generic and functional features.  
+The language was designed with systems programming and embedded, resource-constrained software and large systems in mind, with performance, efficiency, and flexibility of use as its design highlights.

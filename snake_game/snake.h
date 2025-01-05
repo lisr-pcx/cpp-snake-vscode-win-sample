@@ -27,7 +27,7 @@ public:
 
 	/*
 	 * Method: Constructor
-	 * Create the square board square for the game.
+	 * Create the square board for the game.
 	 */
 	Snake(unsigned short board_size);
 	~Snake();
